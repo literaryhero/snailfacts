@@ -14,7 +14,12 @@
   <body>
     <main>
         
-        <div><h1 display:inline-block;><center><img id="snailpic" src="snail1.png">Snail Facts!</center></h1></div>
+        <div><h1 display:inline-block;><center>
+          <picture>
+            <source media="(min-width:800px)" srcset="snail1.png">
+            <img id="snailpic" src="snail1sm.png">
+          </picture>
+          Snail Facts!</center></h1></div>
         <p id="facts" onClick="clickaroo()"></p>  
     </main>
 	<script src="index.js">

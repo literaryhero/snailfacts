@@ -1,5 +1,5 @@
 var list = [
-    "Welcome to Snail Facts! Click here to see a fact!",
+    "Welcome to Snail Facts!<br> Click here to see a fact!",
     "Snails are gastropod mollusks, which means they belong to the same class as slugs and clams.",
     "Snails can be found in diverse habitats worldwide, including forests, deserts, and oceans.",
     "The largest land snail species is the African giant snail, which can grow up to 30 centimeters (12 inches) in length.",
