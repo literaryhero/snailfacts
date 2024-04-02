@@ -76,7 +76,7 @@ factsDoc.innerHTML = list[0];
 
 function clickaroo() {
     if (!inProcess) {
-        if (click === 2 | click === 4 | click === 6) {
+        if (click === 11 | click === 31 | click === 121) {
             chatTime();
         } else {
             randomFact();
@@ -93,16 +93,16 @@ function randomFact() {
 
 function chatTime() {
     inProcess = true;
-    if (click === 2) {
+    if (click === 11) {
         factsDoc.innerHTML = "So, you like Snail Facts, huh?";
         posiDoc.style.visibility = "visible";
         negiDoc.style.visibility = "visible";
-    } else if (click === 4) {
+    } else if (click === 31) {
         endTimer();
         factsDoc.innerHTML = "Wow, you are devouring facts like a snail devours vegetables!";
         posiDoc.innerHTML = "...";
         posiDoc.style.visibility = "visible";
-    } else if (click === 6) {
+    } else if (click === 121) {
         endTimer();
         factsDoc.innerHTML = "Holy Snail! You are a Snail Fact collector!";
         posiDoc.innerHTML = "And..."
