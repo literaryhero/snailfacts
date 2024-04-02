@@ -10,11 +10,11 @@ body {
     color: rgb(18, 121, 190)
   }
   
-  
   h1 {
     font-size: 300px;
     font-weight: bold;
     margin-top: 5px;
+    margin-bottom: 0px;
   }
   
   .amatic-sc-regular {
@@ -29,8 +29,7 @@ body {
     font-style: normal;
   }
   
- 
-  #facts { 
+  .bodytext { 
     margin: auto;
     display: flex;
     align-items: center;
@@ -43,20 +42,75 @@ body {
     padding-top:15px;
     padding-bottom:15px;
     padding-left:15px;
+    margin-top: 10px;
     background-color:rgb(18, 121, 190);
-    font-size: 100px;
+    font-size: 60px;
     color: white; 
-}
+  }
+
+  #controls { 
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    min-height: auto;
+    padding-right:15px;
+    padding-top:15px;
+    padding-bottom:15px;
+    padding-left:15px;
+    margin-top: 10px;
+    font-size: 60px;
+    color: white; 
+  }
+
+  .material-icons.page {
+    font-size: 60px;
+  }
+
+  .answerblock {
+    /* margin-right: 1rem; */
+    /* padding-right: 2rem; */
+    text-align: center;
+  }
+
+  #positive {
+    visibility: hidden;
+    width: 25%;
+    display: inline-block;
+    background-color:green;
+    vertical-align: middle;
+  }
+
+  #negative {
+    visibility: hidden;
+    width: 25%;
+    display: inline-block;
+    background-color: red;
+    vertical-align: middle;
+  }
 
 @media screen and (max-width: 800px) {
   h1 {
       font-size: 100px;
       font-weight: bold;
     }
-  #facts { 
+  .bodytext { 
       width: 90%;
       min-height: 100px;
       border-radius: 15px;
-      font-size: 30px; 
+      font-size: 30px;
+  }
+  .material-icons.page {
+    font-size: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  #positive {
+    min-height: 50px;
+  }
+  #negative {
+    min-height: 50px;
   }
 }

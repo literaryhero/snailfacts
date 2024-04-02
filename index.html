@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
     <title>Snail Facts!</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
@@ -23,7 +24,19 @@
             <img id="snailpic" src="snail1sm.png">
           </picture>
           Snail Facts!</center></h1></div>
-        <p id="facts" onClick="clickaroo()"></p>  
+        <div id="controls" style="display:none">
+            <i class="material-icons page" id="first" onClick="firstPage()">first_page</i>
+            <i class="material-icons page" id="back" onClick="rewind()">fast_rewind</i>
+            <i class="material-icons page" id="play" onClick="play()">play_arrow</i>
+            <i class="material-icons page" id="pause" onClick="pause()">pause</i>
+            <i class="material-icons page" id="forward" onClick="foward()">fast_forward</i>
+            <i class="material-icons page" id="last" onClick="lastPage()">last_page</i>
+        </div>
+        <div><p class="bodytext" id="facts" onClick="clickaroo()"></p></div>  
+        <div class="answerblock">
+          <div class="bodytext" id="positive" onClick="yesClick()">Yes</div>
+          <div class="bodytext" id="negative" onClick="noClick()">No</div>
+        </div>
     </main>
 	<script src="index.js">
     </script>
