@@ -437,7 +437,7 @@ function calculateMoney() {
     progress = (snails / 8e9) * 100;
     document.getElementById('circle').value = progress;
     moneyButtons();
-    if (progress > 1) {
+    if (progress > 100) {
         endGame();
     }
 }
