@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="./dash.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
+    <title>Snail Facts! --ADMIN--</title>
+  </head>
+  <body>
+    <main>
+        <div><h1 display:inline-block;><center>
+            <picture>
+              <source media="(min-width:1200px)" srcset="./snail1.png">
+              <img id="snailpic" src="./snail1sm.png">
+            </picture>
+            Control Panel</center></h1></div>  
+        <div id="popUp"><p id="popUpText">Welcome to the Administration. This is where the magic happens.</p><button id="popUpButton" onClick="popUpDialog()">Uh...OK.</button></div>
+        <div id="controlPanel">
+            <div id="left">
+                <div class="statusBar" id="status">
+                    <p class="statusCell" id="status1" title="0/s">💵: 0.00</p>
+                    <p class="statusCell" id="status2">🧍0</p>
+                    <p class="statusCell" id="status3" title="0.0/s">🍄0</p>
+                    <p class="statusCell" id="status4" title="0.0/s">🐌0</p>
+                </div>
+                <div id="buttons">
+                    <div id="moneyLine">
+                    <button disabled class="moneyButton" id="money1" onpointerdown="tellMulti('tellFriend')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="tellFriend()" title="Tell a friend about snails!">💵1 </button>
+                    <button disabled class="moneyButton" id="money2" onpointerdown="tellMulti('buyAd')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="buyAd()" title="Buy some shady ads.">💵10</button>
+                    <button disabled class="moneyButton" id="money3" onpointerdown="tellMulti('targetedAd')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="targetedAd()" title="Buy targeted ads.">💵100</button>
+                    <button disabled class="moneyButton" id="money4" onpointerdown="tellMulti('podcast')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="podcast()" title="Get an ad on your favorite murder podcast.">💵10k🧍1</button>
+                    <button disabled class="moneyButton" id="money5" onpointerdown="tellMulti('television')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="television()" title="Advertise during the sports championship!">💵1m🧍10</button>
+                    <button disabled class="moneyButton" id="money6" onpointerdown="tellMulti('mindRay')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="mindRay()" title="Invest in a mind ray!">💵1b🧍100</button>
+                    </div>
+                    <div id="peopleLine">
+                        <button disabled class="peopleButton" id="people1" onpointerdown="tellMulti('hireOne')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="hireOne()" title="Hire a worker.">💵10k </button>
+                        <button disabled class="peopleButton" id="people2" onpointerdown="tellMulti('hireTwo')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="hireTwo()" title="Hire ten workers.">💵300k</button>
+                        <button disabled class="peopleButton" id="people3" onpointerdown="tellMulti('hireThree')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="hireThree()" title="Hire twenty workers.">💵4m</button>
+                        <button disabled class="peopleButton" id="people4" onpointerdown="tellMulti('hireFour')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="hireFour()" title="Hire one hundred workers.">💵100m</button>
+                        </div>
+                    <div id="foodLine">
+                        <button disabled class="foodButton" id="food1" onpointerdown="tellMulti('delivery')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="delivery()" title="Get veggies delivered.">💵100k </button>
+                        <button disabled class="foodButton" id="food2" onpointerdown="tellMulti('supermarket')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="supermarket()" title="Go shopping at the supermarket.">💵1m</button>
+                        <button disabled class="foodButton" id="food3" onpointerdown="tellMulti('wholesaler')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="wholesaler()" title="Hit up the wholesaler.">💵10m</button>
+                        <button disabled class="foodButton" id="food4" onpointerdown="tellMulti('garden')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="garden()" title="Start a garden.">💵100m🧍1</button>
+                        <button disabled class="foodButton" id="food5" onpointerdown="tellMulti('farm')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="farm()" title="Buy a farm.">💵1b🧍50</button>
+                        <button disabled class="foodButton" id="food6" onpointerdown="tellMulti('industry')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="industry()" title="Create a mega-agriculture project!">💵5b🧍100</button>
+                        </div>
+                    <div id="foodLine">
+                        <button disabled class="snailButton" id="snail1" onpointerdown="tellMulti('terrarium')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="terrarium()" title="Raise snails in a terrarium!">🍄1/s </button>
+                        <button disabled class="snailButton" id="snail2" onpointerdown="tellMulti('outside')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="outside()" title="Put snails in your garden.">🍄10/s</button>
+                        <button disabled class="snailButton" id="snail3" onpointerdown="tellMulti('snailFarm')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="snailFarm()" title="Start an industrial snail farm.">🍄100/s</button>
+                        <button disabled class="snailButton" id="snail4" onpointerdown="tellMulti('irrigate')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="irrigate()" title="Irrigate the desert for a snail breeding facility.">🍄1k/s</button>
+                        <button disabled class="snailButton" id="snail5" onpointerdown="tellMulti('snailClone')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="snailClone()" title="Start a snail cloning lab.">🍄10k/s</button>
+                        <button disabled class="snailButton" id="snail6" onpointerdown="tellMulti('timeMachine')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="timeMachine()" title="Invent a time machine to recursively breed snails!!">🍄100k/s</button>
+                        <button disabled class="snailButton" id="snail7" onClick="cullSnails()">🐌 Cull</button>    
+                    </div>
+                </div>
+            </div>
+            <div id="right">
+                <circle-progress id="circle" value="0" max="100" text-format="none"></circle-progress>
+                <img id="earth" src="./earth.png" />
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/js-circle-progress/dist/circle-progress.min.js" type="module"></script>
+	<script src="./dash.js"></script>
+  </body>
+</html>

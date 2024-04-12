@@ -1,5 +1,7 @@
 html {
   scrollbar-gutter: stable both-edges;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {

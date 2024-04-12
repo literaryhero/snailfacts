@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
     <link rel="manifest" href="./site.webmanifest">
   </head>
-  <body>
+  <body onkeypress="handleEnter(event)">
     <main>
         
         <div><h1 display:inline-block;><center>
@@ -25,20 +25,20 @@
           </picture>
           Snail Facts!</center></h1></div>
         <div id="controls" style="display:none">
-            <i class="material-icons page" id="first" onClick="firstPage()">first_page</i>
-            <i class="material-icons page" id="back" onClick="rewind()">fast_rewind</i>
-            <i class="material-icons page" id="play" onClick="play()">play_arrow</i>
-            <i class="material-icons page" id="pause" onClick="pause()">pause</i>
-            <i class="material-icons page" id="forward" onClick="foward()">fast_forward</i>
-            <i class="material-icons page" id="last" onClick="lastPage()">last_page</i>
+            <i class="material-icons page" id="first" onClick="firstPage()" tabindex="0">first_page</i>
+            <i class="material-icons page" id="back" onClick="rewind()" tabindex="0">fast_rewind</i>
+            <i class="material-icons page" id="play" onClick="play()" tabindex="0">play_arrow</i>
+            <i class="material-icons page" id="pause" onClick="pause()" tabindex="0">pause</i>
+            <i class="material-icons page" id="forward" onClick="foward()" tabindex="0">fast_forward</i>
+            <i class="material-icons page" id="last" onClick="lastPage()" tabindex="0">last_page</i>
         </div>
-        <div><p class="bodytext" id="facts" onClick="clickaroo()"></p></div>  
+        <div><p class="bodytext" id="facts" onClick="clickaroo()" tabindex="0"></p></div>  
         <div class="answerblock">
-          <div class="bodytext" id="positive" onClick="yesClick()">Yes</div>
-          <div class="bodytext" id="negative" onClick="noClick()">No</div>
+          <div class="bodytext" id="positive" onClick="yesClick()" tabindex="0">Yes</div>
+          <div class="bodytext" id="negative" onClick="noClick()" tabindex="0">No</div>
         </div>
     </main>
 	<script src="index.js">
-    </script>
+  </script>
   </body>
 </html>

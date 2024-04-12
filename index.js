@@ -76,7 +76,7 @@ factsDoc.innerHTML = list[0];
 
 function clickaroo() {
     if (!inProcess) {
-        if (click === 11 | click === 31 | click === 121) {
+        if (click === 11 | click === 31 | click === 91 | click > 141) {
             chatTime();
         } else {
             randomFact();
@@ -102,10 +102,15 @@ function chatTime() {
         factsDoc.innerHTML = "Wow, you are devouring facts like a snail devours vegetables!";
         posiDoc.innerHTML = "...";
         posiDoc.style.visibility = "visible";
-    } else if (click === 121) {
+    } else if (click === 91) {
         endTimer();
         factsDoc.innerHTML = "Holy Snail! You are a Snail Fact collector!";
         posiDoc.innerHTML = "And..."
+        posiDoc.style.visibility = "visible";
+    } else if (click > 141) {
+        endTimer();
+        factsDoc.innerHTML = "Wow, I think you are ready for the next level.";
+        posiDoc.innerHTML = "Snails!"
         posiDoc.style.visibility = "visible";
     }
 }
@@ -149,6 +154,12 @@ function yesClick() {
         document.getElementById("controls").style.display = "flex";
         speed = 250;
         autoTimer = setInterval(snail, speed);
+    }   else if (yesses === 7) {
+        factsDoc.innerHTML = "How would you like to be a Snail Facts Admin?";
+        posiDoc.innerHTML = "I put on my robe and wizard hat.";
+        yesses = 8;
+    }   else if (yesses === 8) {
+        window.location="./dash.html";        
     }
 }
 
@@ -161,10 +172,14 @@ function noClick() {
 }
 
 function snail() {
+    if (click <= 1000) {
     var nextText = factGen();
     factsDoc.innerHTML = click + ")" + " " + nextText;
     factHistory.push(nextText);
     click++;
+    } else {
+        nextLevel();
+    }
 }
 
 function factGen() {
@@ -240,4 +255,11 @@ function lastPage() {
 function endTimer() {
     clearInterval(autoTimer);
     autoTimer = null;
+}
+
+function handleEnter(e) {
+    var keycode = (e.keyCode ? e.keyCode : e.which);
+    if (keycode == '13') {
+        document.activeElement.click();
+    }
 }
