@@ -164,6 +164,7 @@ function tellFriend() {
 }
 
 function buyAd() {
+    if(money >= moneyCost2) {
     money-= moneyCost2;
     moneyUp+= 0.3;
     moneyCost2 = moneyCost2 * 1.4;
@@ -171,9 +172,13 @@ function buyAd() {
     status1.innerHTML = "💵: " + nFormatter(money, 2);
     status1.title = nFormatter((moneyUp * 100), 2) + "/s";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function targetedAd() {
+    if (money >= moneyCost3) {
     money-= moneyCost3;
     moneyUp+= 0.9;
     moneyCost3 = moneyCost3 * 1.4;
@@ -181,9 +186,13 @@ function targetedAd() {
     status1.innerHTML = "💵: " + nFormatter(money, 2);
     status1.title = nFormatter((moneyUp * 100), 2) + "/s";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function podcast() {
+    if(money >= moneyCost4 && people >= 1) {
     money-= moneyCost4;
     people--;
     moneyUp+= 810.11;
@@ -193,9 +202,13 @@ function podcast() {
     status1.title = nFormatter((moneyUp * 100), 2) + "/s";
     status2.innerHTML = "🧍" + people;
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function television() {
+    if(money >= moneyCost5 && people >= 10) {
     money-= moneyCost5;
     people-= 10;
     moneyUp+= 10000.00;
@@ -205,9 +218,13 @@ function television() {
     status1.title = nFormatter((moneyUp * 100), 2) + "/s";
     status2.innerHTML = "🧍" + people;
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function mindRay() {
+    if(money >= moneyCost6 && people >= 100) {
     money-= moneyCost6;
     people-= 100;
     moneyUp+= 500000.00;
@@ -217,45 +234,65 @@ function mindRay() {
     status1.title = nFormatter((moneyUp * 100), 2) + "/s";
     status2.innerHTML = "🧍" + people;
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function hireOne() {
+    if(money >= peopleCost1) {
     money-= peopleCost1;
     people++;
     peopleCost1 = peopleCost1 * 1.4;
     people1.innerHTML = "💵" + nFormatter(peopleCost1, 2);
     status2.innerHTML = "🧍" + people;
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function hireTwo() {
+    if(money >= peopleCost2) {
     money-= peopleCost2;
     people+= 10;
     peopleCost2 = peopleCost2 * 1.4;
     people2.innerHTML = "💵" + nFormatter(peopleCost2, 2);
     status2.innerHTML = "🧍" + people;
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function hireThree() {
+    if(money >= peopleCost3) {
     money-= peopleCost3;
     people+= 20;
     peopleCost3 = peopleCost3 * 1.4;
     people3.innerHTML = "💵" + nFormatter(peopleCost3, 2);
     status2.innerHTML = "🧍" + people;
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function hireFour() {
+    if(money >= peopleCost4) {
     money-= peopleCost4;
     people+= 100;
     peopleCost4 = peopleCost4 * 1.4;
     people4.innerHTML = "💵" + nFormatter(peopleCost4, 2);
     status2.innerHTML = "🧍" + people;
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function delivery() {
+    if(money >= foodCost1) {
     money-= foodCost1;
     foodUp+= .0099;
     foodCost1 = foodCost1 * 1.4;
@@ -263,9 +300,13 @@ function delivery() {
     status3.innerHTML = "🍄" + nFormatter(food, 2);
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function supermarket() {
+    if(money >= foodCost2) {
     money-= foodCost2;
     foodUp+= .099;
     foodCost2 = foodCost2 * 1.4;
@@ -273,9 +314,13 @@ function supermarket() {
     status3.innerHTML = "🍄" + nFormatter(food, 2);
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function wholesaler() {
+    if(money >= foodCost3) {
     money-= foodCost3;
     foodUp+= .99;
     foodCost3 = foodCost3 * 1.4;
@@ -283,9 +328,13 @@ function wholesaler() {
     status3.innerHTML = "🍄" + nFormatter(food, 2);
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function garden() {
+    if(money >= foodCost4 && people >= 1) {
     money-= foodCost4;
     people--;
     foodUp+= 9.9;
@@ -295,9 +344,13 @@ function garden() {
     status3.innerHTML = "🍄" + nFormatter(food, 2);
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function farm() {
+    if(money >= foodCost5 && people >= 50) {
     money-= foodCost5;
     people-= 50;
     foodUp+= 99.9;
@@ -307,9 +360,13 @@ function farm() {
     status3.innerHTML = "🍄" + nFormatter(food, 2);
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function industry() {
+    if(money >= foodCost6 && people >= 100) {
     money-= foodCost6;
     people-= 100;
     foodUp+= 999;
@@ -319,9 +376,13 @@ function industry() {
     status3.innerHTML = "🍄" + food;
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function terrarium() {
+    if(money >= snailCost1) {
     foodDown+= (snailCost1/100);
     snailUp+= 5;
     if (food + (foodUp - foodDown) > 0) {
@@ -336,9 +397,13 @@ function terrarium() {
     status4.title = nFormatter((snailUp* 100), 2) + "/s";
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function outside() {
+    if(money >= snailCost2) {
     foodDown+= (snailCost2/100);
     snailUp+= 10;
     if (food + (foodUp - foodDown) > 0) {
@@ -353,9 +418,13 @@ function outside() {
     status4.title = nFormatter((snailUp* 100), 2) + "/s";
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function snailFarm() {
+    if(money >= snailCost3) {
     foodDown+= (snailCost3/100);
     snailUp+= 150;
     if (food + (foodUp - foodDown) > 0) {
@@ -370,9 +439,13 @@ function snailFarm() {
     status4.title = nFormatter((snailUp* 100), 2) + "/s";
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function irrigate() {
+    if(money >= snailCost4) {
     foodDown+= (snailCost4/100);
     snailUp+= 3e3;
     if (food + (foodUp - foodDown) > 0) {
@@ -387,9 +460,13 @@ function irrigate() {
     status4.title = nFormatter((snailUp* 100), 2) + "/s";
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function snailClone() {
+    if(money >= snailCost5) {
     foodDown+= (snailCost5/100);
     snailUp+= 5e4;
     if (food + (foodUp - foodDown) > 0) {
@@ -404,9 +481,13 @@ function snailClone() {
     status4.title = nFormatter((snailUp* 100), 2) + "/s";
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function timeMachine() {
+    if(money >= snailCost6) {
     foodDown+= (snailCost6/100);
     snailUp+= 5e5;
     if (food + (foodUp - foodDown) > 0) {
@@ -421,6 +502,9 @@ function timeMachine() {
     status4.title = nFormatter((snailUp* 100), 2) + "/s";
     status3.title = nFormatter((foodUp * 100), 2) + "/s " + "(-" + nFormatter((foodDown * 100), 2) + ")";
     moneyButtons();
+    } else {
+        cancelMulti();
+    }
 }
 
 function calculateMoney() {

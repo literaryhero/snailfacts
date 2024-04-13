@@ -283,15 +283,16 @@ circle-progress::part(base) {
     }
     
     button {
-        font-size: 3vw;
+        font-size: 6vw;
     }
 
     #popUp {
-        width: 65%;
-        font-size: 3vw;
+        width: 90%;
+        font-size: 6vw;
     }
 
     #controlPanel {
+        width: 100%;
         flex-direction: column;
     }
 
@@ -305,11 +306,11 @@ circle-progress::part(base) {
         border-top: 1px dashed rgb(219, 132, 18);
         width: 100%;
         order: 2;
-        font-size: 4vw;
+        font-size: 6vw;
     }
 
     #status {
-        font-size: 4vw;
+        font-size: 6vw;
     }
 
     #earth {
