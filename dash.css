@@ -354,25 +354,3 @@ circle-progress::part(base) {
     }
 
   }
-
-  @media (pointer: coarse), (hover: none) {
-    [title] {
-      position: relative;
-      display: inline-flex;
-      justify-content: center;
-      outline: 1px dotted rgb(255, 255, 255);
-      color: rgb(255, 255, 255);
-      background-color: black;
-    }
-    [title]:focus::after {
-      content: attr(title);
-      position: absolute;
-      top: 90%;
-      outline: 1px dotted rgb(255, 255, 255);
-      color: rgb(255, 255, 255);
-      background-color: black;
-      width: fit-content;
-      padding: 3px;
-      z-index: 111;
-    }
-  }
