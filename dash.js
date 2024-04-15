@@ -2,6 +2,7 @@ var universalTimer = null;
 var multiTimer = null;
 var progress = 0;
 var dialog = 0;
+var swipe = 0;
 var money = 0;
 var moneyUp = 0.01;
 var moneyCost1 = 1;
@@ -695,6 +696,32 @@ function moneyButtons() {
     }
 }
 
+function changeCols() {
+    if (swipe === 0) {
+        swipe = 1;
+        status1.style.display = "none";
+        status2.style.display = "none";
+        status3.style.display = "block";
+        status4.style.display = "block";
+        moneyLine.style.display = "none";
+        peopleLine.style.display = "none";
+        foodLine.style.display = "flex";
+        snailLine.style.display = "flex";
+        document.getElementById("swipeButton").innerHTML= "&lt;&lt;";
+    } else {
+        swipe = 0;
+        status1.style.display = "block";
+        status2.style.display = "block";
+        status3.style.display = "none";
+        status4.style.display = "none";
+        moneyLine.style.display = "flex";
+        peopleLine.style.display = "flex";
+        foodLine.style.display = "none";
+        snailLine.style.display = "none";
+        document.getElementById("swipeButton").innerHTML= "&gt;&gt;";
+    }
+}
+
 function nFormatter(num, digits) {
     if (num <= 1) {
         return(Math.round(num * 100) / 100).toFixed(2);
@@ -717,3 +744,50 @@ function nFormatter(num, digits) {
     return item ? (num / item.value).toFixed(digits).replace(regexp, "").concat(item.symbol) : "0";
   }
 }
+
+function handleWidthChange (width) {
+    if (width > 1200) {
+        status1.style.display = "flex";
+        status2.style.display = "flex";
+        status3.style.display = "flex";
+        status4.style.display = "flex";
+        moneyLine.style.display = "flex";
+        peopleLine.style.display = "flex";
+        foodLine.style.display = "flex";
+        snailLine.style.display = "flex";
+    } else if (swipe === 0) {
+        status1.style.display = "block";
+        status2.style.display = "block";
+        status3.style.display = "none";
+        status4.style.display = "none";
+        moneyLine.style.display = "flex";
+        peopleLine.style.display = "flex";
+        foodLine.style.display = "none";
+        snailLine.style.display = "none";
+        document.getElementById("swipeButton").innerHTML= "&gt;&gt;";
+    } else {
+        status1.style.display = "none";
+        status2.style.display = "none";
+        status3.style.display = "block";
+        status4.style.display = "block";
+        moneyLine.style.display = "none";
+        peopleLine.style.display = "none";
+        foodLine.style.display = "flex";
+        snailLine.style.display = "flex";
+        document.getElementById("swipeButton").innerHTML= "&lt;&lt;";
+    }
+  }
+  
+  let prevWidth = 0;
+  
+  const observer = new ResizeObserver(entries => {
+    for (const entry of entries) {
+      const width = entry.borderBoxSize?.[0].inlineSize;
+      if (typeof width === 'number' && width !== prevWidth) {
+        prevWidth = width;
+        handleWidthChange(width);
+      }
+    }
+  });
+  
+  observer.observe(document.body, {box: 'border-box'});

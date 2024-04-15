@@ -35,6 +35,7 @@
                     <button disabled class="moneyButton" id="money4" onpointerdown="tellMulti('podcast')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="podcast()" title="Get an ad on your favorite murder podcast.">💵10k🧍1</button>
                     <button disabled class="moneyButton" id="money5" onpointerdown="tellMulti('television')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="television()" title="Advertise during the sports championship!">💵1m🧍10</button>
                     <button disabled class="moneyButton" id="money6" onpointerdown="tellMulti('mindRay')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="mindRay()" title="Invest in a mind ray!">💵1b🧍100</button>
+                    <button disabled class="moneyButton" id="money7" style="visibility: hidden">Cludge</button>
                     </div>
                     <div id="peopleLine">
                         <button disabled class="peopleButton" id="people1" onpointerdown="tellMulti('hireOne')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="hireOne()" title="Hire a worker.">💵10k </button>
@@ -50,7 +51,7 @@
                         <button disabled class="foodButton" id="food5" onpointerdown="tellMulti('farm')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="farm()" title="Buy a farm.">💵1b🧍50</button>
                         <button disabled class="foodButton" id="food6" onpointerdown="tellMulti('industry')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="industry()" title="Create a mega-agriculture project!">💵5b🧍100</button>
                         </div>
-                    <div id="foodLine">
+                    <div id="snailLine">
                         <button disabled class="snailButton" id="snail1" onpointerdown="tellMulti('terrarium')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="terrarium()" title="Raise snails in a terrarium!">🍄1/s </button>
                         <button disabled class="snailButton" id="snail2" onpointerdown="tellMulti('outside')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="outside()" title="Put snails in your garden.">🍄10/s</button>
                         <button disabled class="snailButton" id="snail3" onpointerdown="tellMulti('snailFarm')" onpointerup="cancelMulti()" onpointerleave="cancelMulti()" onClick="snailFarm()" title="Start an industrial snail farm.">🍄100/s</button>
@@ -66,6 +67,7 @@
                 <img id="earth" src="./earth.png" />
             </div>
         </div>
+        <center><button id="swipeButton" onClick="changeCols()">&gt;&gt;</button></center>
     </main>
     <script src="./circle-progress.min.js" type="module"></script>
 	<script src="./dash.js"></script>
