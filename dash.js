@@ -719,8 +719,8 @@ function nFormatter(num, digits) {
   }
 }
 
-function handleWidthChange (width) {
-    if (width > 1200) {
+function handleWidthChange () {
+    if (window.innerWidth > 1200) {
         status1.style.display = "flex";
         status2.style.display = "flex";
         status3.style.display = "flex";
@@ -759,7 +759,7 @@ function handleWidthChange (width) {
       const width = entry.borderBoxSize?.[0].inlineSize;
       if (typeof width === 'number' && width !== prevWidth) {
         prevWidth = width;
-        handleWidthChange(width);
+        handleWidthChange();
       }
     }
   });

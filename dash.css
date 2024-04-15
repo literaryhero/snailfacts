@@ -5,7 +5,7 @@ html {
   }
   
 body {
-      margin: auto;
+      margin-left: 5%;
       background-color: rgb(0, 0, 0);
       font-family: "Amatic SC", sans-serif;
       font-size: 60px;
@@ -285,6 +285,10 @@ circle-progress::part(base) {
         font-weight: bold;
     }
     
+    body {
+        margin-left: 2.5%;
+    }
+
     button {
         font-size: 6vw;
     }
@@ -325,9 +329,17 @@ circle-progress::part(base) {
         display: none;
     }
 
+    #status2, #status4 {
+        border-right: none;
+    }
+
     #foodLine, #snailLine {
         min-width: 50%;
         display: none;
+    }
+
+    #peopleLine, #snailLine {
+        border-right: none;
     }
 
     #swipeButton {
