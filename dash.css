@@ -360,6 +360,9 @@ circle-progress::part(base) {
       position: relative;
       display: inline-flex;
       justify-content: center;
+      outline: 1px dotted rgb(255, 255, 255);
+      color: rgb(255, 255, 255);
+      background-color: black;
     }
     [title]:focus::after {
       content: attr(title);
