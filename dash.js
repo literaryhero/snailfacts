@@ -681,7 +681,7 @@ function changeCols() {
         peopleLine.style.display = "none";
         foodLine.style.display = "flex";
         snailLine.style.display = "flex";
-        document.getElementById("swipeButton").innerHTML= "&lt;&lt;";
+        document.getElementById("swipeButton").innerHTML= "&lt;- pg. 2";
     } else {
         swipe = 0;
         status1.style.display = "block";
@@ -692,7 +692,7 @@ function changeCols() {
         peopleLine.style.display = "flex";
         foodLine.style.display = "none";
         snailLine.style.display = "none";
-        document.getElementById("swipeButton").innerHTML= "&gt;&gt;";
+        document.getElementById("swipeButton").innerHTML= "pg. 1 -&gt;";
     }
 }
 
@@ -738,7 +738,7 @@ function handleWidthChange () {
         peopleLine.style.display = "flex";
         foodLine.style.display = "none";
         snailLine.style.display = "none";
-        document.getElementById("swipeButton").innerHTML= "&gt;&gt;";
+        document.getElementById("swipeButton").innerHTML= "pg. 1 -&gt;";
     } else {
         status1.style.display = "none";
         status2.style.display = "none";
@@ -748,7 +748,7 @@ function handleWidthChange () {
         peopleLine.style.display = "none";
         foodLine.style.display = "flex";
         snailLine.style.display = "flex";
-        document.getElementById("swipeButton").innerHTML= "&lt;&lt;";
+        document.getElementById("swipeButton").innerHTML= "&lt;- pg. 2";
     }
   }
   
