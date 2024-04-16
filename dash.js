@@ -15,7 +15,7 @@ var people1 = document.getElementById("people1");
 var people2 = document.getElementById("people2");
 var people3 = document.getElementById("people3");
 var people4 = document.getElementById("people4");
-var grub = [0, 0, 0, 1e5, 1e6, 1e7, 1e8, 1e9, 5e9];
+var grub = [0, 0, 0, 5e4, 1e6, 1e7, 1e8, 1e9, 5e9];
 var food1 = document.getElementById("food1");
 var food2 = document.getElementById("food2");
 var food3 = document.getElementById("food3");
@@ -83,7 +83,7 @@ function popUpDialog() {
             dialog++;
             break;
         case 8:
-            universalTimer = setInterval(calculateMoney, 10);
+            universalTimer = setInterval(calculateMoney, 10); //should be 10
             popUp.style.display = 'none';
             dialog++;
             break;
@@ -91,7 +91,7 @@ function popUpDialog() {
             popUpText.innerHTML = "We are being crushed! Noooooooooo!";
             popUpButton.innerHTML = "Welp, I am out of here.";
             snail[1] = 1e7;
-            universalTimer = setInterval(reversal, 10);
+            universalTimer = setInterval(reversal, 10); //should be 10
             dialog++;
             break;
         case 10:
@@ -167,15 +167,13 @@ function targetedAd() {
 }
 
 function podcast() {
-    if(cash[0] >= cash[5] && hiring[0] >= 1) {
+    if(cash[0] >= cash[5] && snail[0] >= 1) {
     cash[0]-= cash[5];
-    hiring[0]--;
     cash[1]+= 810.11;
     cash[5] = cash[5] * 1.4;
-    money4.innerHTML = "💵" + nFormatter(cash[5], 2) + "🧍1";
+    money4.innerHTML = "💵" + nFormatter(cash[5], 2) + "🐌1";
     status1.innerHTML = "💵: " + nFormatter(cash[0], 2);
     status1.title = nFormatter((cash[1] * 100), 2) + "/s";
-    status2.innerHTML = "🧍" + hiring[0];
     moneyButtons();
     } else {
         cancelMulti();
@@ -183,15 +181,13 @@ function podcast() {
 }
 
 function television() {
-    if(cash[0] >= cash[6] && hiring[0] >= 10) {
+    if(cash[0] >= cash[6] && snail[0] >= 1e6) {
     cash[0]-= cash[6];
-    hiring[0]-= 10;
     cash[1]+= 10000.00;
     cash[6] = cash[6] * 1.4;
-    money5.innerHTML = "💵" + nFormatter(cash[6], 2) + "🧍10";
+    money5.innerHTML = "💵" + nFormatter(cash[6], 2) + "🐌1m";
     status1.innerHTML = "💵: " + nFormatter(cash[0], 2);
     status1.title = nFormatter((cash[1] * 100), 2) + "/s";
-    status2.innerHTML = "🧍" + hiring[0];
     moneyButtons();
     } else {
         cancelMulti();
@@ -199,15 +195,13 @@ function television() {
 }
 
 function mindRay() {
-    if(cash[0] >= cash[7] && hiring[0] >= 100) {
+    if(cash[0] >= cash[7] && snail[0] >= 1e9) {
     cash[0]-= cash[7];
-    hiring[0]-= 100;
     cash[1]+= 500000.00;
     cash[7] = cash[7] * 1.4;
-    money6.innerHTML = "💵" + nFormatter(cash[7], 2) + "🧍100";
+    money6.innerHTML = "💵" + nFormatter(cash[7], 2) + "🐌1b";
     status1.innerHTML = "💵: " + nFormatter(cash[0], 2);
     status1.title = nFormatter((cash[1] * 100), 2) + "/s";
-    status2.innerHTML = "🧍" + hiring[0];
     moneyButtons();
     } else {
         cancelMulti();
@@ -267,11 +261,13 @@ function hireFour() {
 }
 
 function delivery() {
-    if(cash[0] >= grub[3]) {
+    if(cash[0] >= grub[3] && hiring[0] >= 1) {
     cash[0]-= grub[3];
+    hiring[0]--;
     grub[1]+= .0099;
     grub[3] = grub[3] * 1.4;
-    food1.innerHTML = "💵" + nFormatter(grub[3], 2);
+    food1.innerHTML = "💵" + nFormatter(grub[3], 2) + "🧍1";
+    status2.innerHTML = "🧍" + hiring[0];
     status3.innerHTML = "🍄" + nFormatter(grub[0], 2);
     status3.title = nFormatter((grub[1] * 100), 2) + "/s " + "(-" + nFormatter((grub[2] * 100), 2) + ")";
     moneyButtons();
@@ -281,11 +277,13 @@ function delivery() {
 }
 
 function supermarket() {
-    if(cash[0] >= grub[4]) {
+    if(cash[0] >= grub[4] && hiring[0] >= 5) {
     cash[0]-= grub[4];
+    hiring[0]-= 5;
     grub[1]+= .099;
     grub[4] = grub[4] * 1.4;
-    food2.innerHTML = "💵" + nFormatter(grub[4], 2);
+    food2.innerHTML = "💵" + nFormatter(grub[4], 2) + "🧍5";
+    status2.innerHTML = "🧍" + hiring[0];
     status3.innerHTML = "🍄" + nFormatter(grub[0], 2);
     status3.title = nFormatter((grub[1] * 100), 2) + "/s " + "(-" + nFormatter((grub[2] * 100), 2) + ")";
     moneyButtons();
@@ -295,11 +293,13 @@ function supermarket() {
 }
 
 function wholesaler() {
-    if(cash[0] >= grub[5]) {
+    if(cash[0] >= grub[5] && hiring[0] >= 10) {
     cash[0]-= grub[5];
+    hiring[0]-= 10;
     grub[1]+= .99;
     grub[5] = grub[5] * 1.4;
-    food3.innerHTML = "💵" + nFormatter(grub[5], 2);
+    food3.innerHTML = "💵" + nFormatter(grub[5], 2) + "🧍10";
+    status2.innerHTML = "🧍" + hiring[0];
     status3.innerHTML = "🍄" + nFormatter(grub[0], 2);
     status3.title = nFormatter((grub[1] * 100), 2) + "/s " + "(-" + nFormatter((grub[2] * 100), 2) + ")";
     moneyButtons();
@@ -309,12 +309,12 @@ function wholesaler() {
 }
 
 function garden() {
-    if(cash[0] >= grub[6] && hiring[0] >= 1) {
+    if(cash[0] >= grub[6] && hiring[0] >= 20) {
     cash[0]-= grub[6];
-    hiring[0]--;
+    hiring[0]-= 20;
     grub[1]+= 9.9;
     grub[6] = grub[6] * 1.4;
-    food4.innerHTML = "💵" + nFormatter(grub[6], 2) + "🧍1";
+    food4.innerHTML = "💵" + nFormatter(grub[6], 2) + "🧍20";
     status2.innerHTML = "🧍" + hiring[0];
     status3.innerHTML = "🍄" + nFormatter(grub[0], 2);
     status3.title = nFormatter((grub[1] * 100), 2) + "/s " + "(-" + nFormatter((grub[2] * 100), 2) + ")";
@@ -568,17 +568,17 @@ function moneyButtons() {
     } else {
         money3.disabled = true;
     }
-    if (cash[0] >= cash[5] && hiring[0] >= 1) {
+    if (cash[0] >= cash[5] && snail[0] >= 1) {
         money4.disabled = false;
     } else {
         money4.disabled = true;
     }
-    if (cash[0] >= cash[6] && hiring[0] >= 10) {
+    if (cash[0] >= cash[6] && snail[0] >= 1e6) {
         money5.disabled = false;
     } else {
         money5.disabled = true;
     }
-    if (cash[0] >= cash[7] && hiring[0] >= 100) {
+    if (cash[0] >= cash[7] && snail[0] >= 1e9) {
         money6.disabled = false;
     } else {
         money6.disabled = true;
@@ -603,22 +603,22 @@ function moneyButtons() {
     } else {
         people4.disabled = true;
     }
-    if (cash[0] >= grub[3]) {
+    if (cash[0] >= grub[3] && hiring[0] >= 1) {
         food1.disabled = false;
     } else {
         food1.disabled = true;
     }
-    if (cash[0] >= grub[4]) {
+    if (cash[0] >= grub[4] && hiring[0] >= 5) {
         food2.disabled = false;
     } else {
         food2.disabled = true;
     }
-    if (cash[0] >= grub[5]) {
+    if (cash[0] >= grub[5] && hiring[0] >= 10) {
         food3.disabled = false;
     } else {
         food3.disabled = true;
     }
-    if (cash[0] >= grub[6] && hiring[0] >= 1) {
+    if (cash[0] >= grub[6] && hiring[0] >= 20) {
         food4.disabled = false;
     } else {
         food4.disabled = true;
