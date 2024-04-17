@@ -169,7 +169,7 @@ function targetedAd() {
 function podcast() {
     if(cash[0] >= cash[5] && snail[0] >= 1) {
     cash[0]-= cash[5];
-    cash[1]+= 810.11;
+    cash[1]+= 800;
     cash[5] = cash[5] * 1.4;
     money4.innerHTML = "💵" + nFormatter(cash[5], 2) + "🐌1";
     status1.innerHTML = "💵: " + nFormatter(cash[0], 2);
